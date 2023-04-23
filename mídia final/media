@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Média</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Média</h1>
+      <form>
+        <div class="form-group">
+          <label for="nome">Nome:</label>
+          <input type="text" class="form-control" id="nome" name="nome" placeholder="Digite o seu nome" required>
+        </div>
+        <div class="form-group">
+          <label for="nota1">Nota 1:</label>
+          <input type="number" class="form-control" id="nota1" name="nota1" placeholder="Digite a primeira nota" min="0" max="100" required>
+        </div>
+        <div class="form-group">
+          <label for="nota2">Nota 2:</label>
+          <input type="number" class="form-control" id="nota2" name="nota2" placeholder="Digite a segunda nota" min="0" max="100" required>
+        </div>
+        <div class="form-group">
+          <label for="nota3">Nota 3:</label>
+          <input type="number" class="form-control" id="nota3" name="nota3" placeholder="Digite a terceira nota" min="0" max="100"  required>
+        </div>
+        <div class="form-group">
+          <label for="nota4">Nota 4:</label>
+          <input type="number" class="form-control" id="nota4" name="nota4" placeholder="Digite a quarta nota" min="0" max="100" required>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="calcularMedia()">Calcular</button>
+      </form>
+      <div class="resultado">
+        <h2>Resultado</h2>
+        <p id="media"></p>
+        <p id="situacao"></p>
+      </div>
+    </div>
+
+   
+    <script>
+        function calcularMedia() {
+  var nome = document.getElementById("nome").value;
+  var nota1 = parseFloat(document.getElementById("nota1").value);
+  var nota2 = parseFloat(document.getElementById("nota2").value);
+  var nota3 = parseFloat(document.getElementById("nota3").value);
+  var nota4 = parseFloat(document.getElementById("nota4").value);
+  var nota_final = (nota1 + nota2 + nota3 + nota4) / 4;
+  document.getElementById('media').innerHTML = nota_final
+  if (nota_final >= 60) {
+    situacao.textContent = 'Aprovado';
+    situacao.style.backgroundColor = 'green';
+  } else if (nota_final >= 2.1 && nota_final <= 59) {
+    situacao.textContent = 'Recuperação';
+    situacao.style.backgroundColor = 'blue';
+  } else {
+    situacao.textContent = 'Reprovado';
+    situacao.style.backgroundColor = 'red';
+  }
+
+}
+    </script>
+  </body>
+</html>
