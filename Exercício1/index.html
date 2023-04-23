@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css "integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"crossorigin="anonymous"/>
+    <title>Formulário</title>
+</head>
+<body>
+    <center>
+    <h1>Formulário WEB</h1>
+        <hr>
+    <div>
+    <label for="">Nome</label>
+    <input type="text" name="nome" id="nome">
+    <br>
+    <label for="">Sobrenome</label>
+    <input type="text" name="sobrenome" id="sobrenome">
+    <br>
+    <label for="">Data de nascimento</label>
+    <input type="date" name="dataNas" id="dataNas">
+    <br>
+    <label for="">genero</label>
+    <input type="text" name="genero" id="genero">
+    <br>
+    <input type="submit" name="submeter" onclick="mostrar()">
+    </div>   
+    <p id="recebe">
+
+    </p>
+</center>
+    <script>
+       alert('Seja bem vindo') 
+
+       var Nome = "";
+       var Sobre = "";
+       var nas = "";
+       function mostrar(){
+        Nome = document.getElementById('nome')
+        Sobre = document.getElementById('sobrenome')
+        nas = document.getElementById('dataNas')
+
+        document.getElementById('recebe').innerHTML = " Olá " +nome.value + " " + sobrenome.value + ", Sua data de nascimento é " +dataNas.value + " e voce é do genero " + genero.value
+       }
+    </script>
+</html>
